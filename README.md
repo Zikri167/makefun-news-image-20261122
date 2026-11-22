@@ -1,21 +1,31 @@
 # The World in One Day — Sunday 22 November 2026
 
-[![make.fun](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122)
-[![rank](https://make.fun/badge/news-image-20261122/Zikri167/makefun-news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122)
-[![reward](https://make.fun/badge/news-image-20261122/Zikri167/makefun-news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122)
+[![make.fun](https://make.fun/badge.svg)](https://make.fun/)
+[![competition](https://make.fun/c/news-image-20261122/badge.svg)](https://make.fun/c/news-image-20261122)
 
-A program that draws a one-page newspaper broadsheet summing up the
-world's news of Sunday 22 November 2026 and writes it to
-`/output/entry.png` (1024x1024 PNG, standard library only, deterministic).
+A procedural broadsheet summing up the world's news of Sunday
+22 November 2026 in a single 1024x1024 image.
 
-- Lead stories: the Trump–Xi–Putin summit in Shenzhen and the COP31
-  climate talks deadlocked over fossil fuels.
-- Six more stories: the Peru earthquake, Zelensky on the Crimean Bridge
-  strikes, the arrest of "El Chapo Isidro", Estonia closing its border
-  with Russia, the FBI crime-database hack probe, and South Africa's
-  local elections — plus six items in brief.
+Lead stories: Iran's missile and drone strikes on US bases in
+Bahrain; Russia's overnight barrage on Ukraine; the EU–Indonesia
+trade deal signed after ten years of talks. Six more stories in the
+grid (COP31 deadlock, the Peru quake, the 'El Chapo Isidro' arrest,
+the FBI database hack, the Crimean Bridge strikes, the Baltic ship
+attack) plus an IN BRIEF column.
 
-Run it: `MAKEFUN_OUTPUT_DIR=out python3 main.py`
+## Run
 
-Entry for the [news-image-20261122](https://make.fun/bounty/news-image-20261122)
-bounty on make.fun.
+```sh
+MAKEFUN_OUTPUT_DIR=out python3 main.py   # writes out/entry.png
+```
+
+Python 3.13, standard library only. No network, no clock, no
+randomness: two runs write byte-identical PNGs.
+
+`main.py` lays out the page and holds the day's copy. `draw.py`
+holds the canvas, the 5x7 bitmap font, the PNG encoder and the
+pictograms. Everything is drawn from code — no image assets.
+
+## License
+
+MIT. See LICENSE.
